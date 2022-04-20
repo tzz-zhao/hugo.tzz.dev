@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on Tzz's Blog</title><link>https://tzz.dev/tool/</link><description>Recent content in Tools on Tzz's Blog</description><generator>Hugo -- gohugo.io</generator><language>ja-JP</language><lastBuildDate>Thu, 21 Apr 2022 01:23:46 +0900</lastBuildDate><atom:link href="https://tzz.dev/tool/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugoのhtml langの設定方法</title><link>https://tzz.dev/tool/hugo/html-lang/</link><pubDate>Thu, 21 Apr 2022 01:23:46 +0900</pubDate><guid>https://tzz.dev/tool/hugo/html-lang/</guid><description>htmlのlangは未設定なので、lang=jaに設定します。
 言語設定
 config.ymlに下記の設定を修正
-languageCode = &amp;lsquo;ja-JP&amp;rsquo; defaultContentLanguage = &amp;lsquo;ja&amp;rsquo;
+languageCode = &amp;lsquo;ja-JP&amp;rsquo;
+defaultContentLanguage = &amp;lsquo;ja&amp;rsquo;
 layouts/_default/baseof.html修正
+lang=&amp;quot;{{.Site.Language.Lang}}&amp;quot;
 以上。</description></item><item><title>HugoのGoogleアナリティクス設定</title><link>https://tzz.dev/tool/hugo/hugo-add-googleanalytics/</link><pubDate>Thu, 21 Apr 2022 01:04:33 +0900</pubDate><guid>https://tzz.dev/tool/hugo/hugo-add-googleanalytics/</guid><description>HugoはGoogleアナリティクスのV3とV4両方サポートしています、今回はV４を使います。
 測定IDの設定
 設定ファイル（config.toml）で測定IDを設定します
