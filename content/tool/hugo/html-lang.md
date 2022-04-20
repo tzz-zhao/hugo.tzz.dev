@@ -10,10 +10,11 @@ htmlのlangは未設定なので、lang=jaに設定します。
     config.ymlに下記の設定を修正
 
     > languageCode = 'ja-JP'
+
     > defaultContentLanguage = 'ja'
 
 1. layouts/_default/baseof.html修正
 
-    > <html lang="{{.Site.Language.Lang}}">
+    > lang="{{.Site.Language.Lang}}"
 
 以上。
