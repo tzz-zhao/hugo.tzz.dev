@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "dev": "hugo server -D"
+  },
+  "name": "tzz.dev",
+  "packageManager": "yarn@3.2.0"
+}
