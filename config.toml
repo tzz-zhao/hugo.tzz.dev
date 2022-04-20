@@ -1,4 +1,5 @@
 baseURL = 'https://tzz.dev/'
 languageCode = 'ja-JP'
+defaultContentLanguage = 'ja'
 title = "Tzz's Blog"
 googleAnalytics = 'G-YTV79RC16K'
