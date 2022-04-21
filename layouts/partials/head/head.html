@@ -1,3 +1,12 @@
 <head>
     {{- partial "head/meta.html" . -}}
+    {{/*  Title  */}}
+    <title>
+        {{- if .IsHome -}}
+          {{ .Site.Title -}}
+        {{ else -}}
+          {{ with .Title }}{{ . }} | {{ end -}}
+          {{ .Site.Title -}}
+        {{ end -}}
+    </title>
 </head>
