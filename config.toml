@@ -2,5 +2,6 @@ baseURL = 'https://tzz.dev/'
 languageCode = 'ja-JP'
 defaultContentLanguage = 'ja'
 title = "Tzz's Blog"
+copyright = "&copy; 2022 tzz.dev"
 googleAnalytics = 'G-YTV79RC16K'
 enableGitInfo = "true"
