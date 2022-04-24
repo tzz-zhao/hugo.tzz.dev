@@ -1,6 +1,11 @@
 {{ define "main" }}
     <article class="prose lg:prose-xl mx-auto">
-        <h2>{{.Title}}</h2>
+        <h2 class="-mb-5">{{.Title}}</h2>
+        <ul class="flex list-none">
+            {{ range (.GetTerms "tags") }}
+                <li class="mr-2"><a href="{{ .Permalink }}"><i class="fa-solid fa-tag"></i> {{ .LinkTitle }}</a></li>
+            {{ end }}
+        </ul>
         {{.Content}}
     </article>
 {{ end }}

@@ -1,8 +1,7 @@
 {
   "scripts": {
     "dev": "hugo server -D",
-    "git": "git add . && git commit -m $npm_config_cmmt && git push origin main",
-    "test": "echo username is $npm_config_cmmt Taro"
+    "git": "git add . && git commit -m $npm_config_cmmt && git push origin main"
   },
   "name": "tzz.dev",
   "packageManager": "yarn@3.2.0",

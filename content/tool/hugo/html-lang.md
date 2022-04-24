@@ -1,6 +1,9 @@
 ---
 title: "Hugoのhtml langの設定方法"
 date: 2022-04-21T01:23:46+09:00
+tags:
+    - hugo
+    - lang
 ---
 
 htmlのlangは未設定なので、lang=jaに設定します。
