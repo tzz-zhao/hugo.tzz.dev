@@ -1,6 +1,6 @@
 {{ define "main" }}
-    {{.Site.Author.name}}
-    {{.Lastmod.Format "2006-01-02 15:04:05"}}
-    <h1>{{.Title}}</h1>
-    {{.Content}}
+    <article class="prose lg:prose-xl mx-auto">
+        <h2>{{.Title}}</h2>
+        {{.Content}}
+    </article>
 {{ end }}
