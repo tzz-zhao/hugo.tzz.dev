@@ -3,15 +3,17 @@ title: "Git情報を使う"
 date: 2022-04-21T21:17:59+09:00
 ---
 
-作成者、作成時間、更新者、更新時間などGit情報を使うには、設定が必要です。
+作成者、作成時間などGit情報を使うには、設定が必要です。
 
 1. 設定ファイル修正
 
-    > enableGitInfo = "true"
+    ```toml
+    enableGitInfo = "true"
+    ```
 
 1. テンプレートで使う
-    > {{with .GitInfo}}
-
-    > {{.AuthorName}}{{.AuthorDate}}
-
-    > {{end}}
+    ```go
+    {{with .GitInfo}}
+        {{.AuthorName}}{{.AuthorDate}}
+    {{end}}
+    ```

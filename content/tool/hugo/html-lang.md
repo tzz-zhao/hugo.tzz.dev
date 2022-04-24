@@ -7,14 +7,15 @@ htmlのlangは未設定なので、lang=jaに設定します。
 
 1. 言語設定
 
-    config.ymlに下記の設定を修正
-
-    > languageCode = 'ja-JP'
-
-    > defaultContentLanguage = 'ja'
+    config.tomlに下記の設定を修正
+    ```toml
+    languageCode = 'ja-JP'
+    defaultContentLanguage = 'ja'
+    ```
 
 1. layouts/_default/baseof.html修正
-
-    > lang="{{.Site.Language.Lang}}"
+    ```go
+    lang="{{.Site.Language.Lang}}"
+    ```
 
 以上。
