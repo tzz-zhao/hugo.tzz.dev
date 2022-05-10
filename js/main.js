@@ -2368,6 +2368,11 @@
   var counter = api.counter;
 
   // node_modules/@fortawesome/free-solid-svg-icons/index.es.js
+  var faAnglesUp = {
+    prefix: "fas",
+    iconName: "angles-up",
+    icon: [384, 512, ["angle-double-up"], "f102", "M54.63 246.6L192 109.3l137.4 137.4C335.6 252.9 343.8 256 352 256s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25l-160-160c-12.5-12.5-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25S42.13 259.1 54.63 246.6zM214.6 233.4c-12.5-12.5-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0L192 301.3l137.4 137.4C335.6 444.9 343.8 448 352 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L214.6 233.4z"]
+  };
   var faCircle = {
     prefix: "fas",
     iconName: "circle",
@@ -2384,9 +2389,18 @@
     icon: [576, 512, [], "f120", "M9.372 86.63C-3.124 74.13-3.124 53.87 9.372 41.37C21.87 28.88 42.13 28.88 54.63 41.37L246.6 233.4C259.1 245.9 259.1 266.1 246.6 278.6L54.63 470.6C42.13 483.1 21.87 483.1 9.372 470.6C-3.124 458.1-3.124 437.9 9.372 425.4L178.7 256L9.372 86.63zM544 416C561.7 416 576 430.3 576 448C576 465.7 561.7 480 544 480H256C238.3 480 224 465.7 224 448C224 430.3 238.3 416 256 416H544z"]
   };
 
-  // <stdin>
-  library$1.add(faCircle, faTerminal, faTag);
+  // ns-hugo:/home/runner/work/tzz.dev/tzz.dev/assets/js/fontawesome.ts
+  library$1.add(faCircle, faTerminal, faTag, faAnglesUp);
   dom$1.i2svg();
+
+  // ns-hugo:/home/runner/work/tzz.dev/tzz.dev/assets/js/back-to-top.ts
+  window.onscroll = function() {
+    if (window.scrollY > 100) {
+      document.getElementById("back-to-top").classList.remove("hidden");
+    } else {
+      document.getElementById("back-to-top").classList.add("hidden");
+    }
+  };
 })();
 /*!
  * Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com
