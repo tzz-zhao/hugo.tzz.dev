@@ -2,7 +2,7 @@
 <html lang="{{.Site.Language.Lang}}">
     {{- partial "head/head.html" . -}}
 <body class="flex flex-col min-h-screen">
-    <main class="flex-grow">
+    <main class="flex-grow px-5">
         {{- partial "header/header.html" . -}}
         <div id="content">
             {{- block "main" . }}{{- end }}
