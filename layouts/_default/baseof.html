@@ -2,8 +2,8 @@
 <html lang="{{.Site.Language.Lang}}">
     {{- partial "head/head.html" . -}}
 <body class="flex flex-col min-h-screen">
+    {{- partial "header/header.html" . -}}
     <main class="flex-grow px-5">
-        {{- partial "header/header.html" . -}}
         <div id="content">
             {{- block "main" . }}{{- end }}
         </div>
