@@ -1,10 +1,10 @@
 {{ define "main" }}
-    <article class="prose lg:prose-xl mx-auto">
-        <h2 class="-mb-5">{{.Title}}</h2>
+    <article class="prose lg:prose-xl mx-auto mt-5">
+        <h2 class="">{{.Title}}</h2>
         この記事を読むのに必要な時間は約{{.ReadingTime}}分です。
         <ul class="flex list-none">
             {{ range (.GetTerms "tags") }}
-                <li class="mr-2"><a href="{{ .Permalink }}"><i class="fa-solid fa-tag"></i> {{ .LinkTitle }}</a></li>
+                <li class="mr-2"><a href="{{ .Permalink }}"><span class="material-icons align-text-bottom">tag</span> {{ .LinkTitle }}</a></li>
             {{ end }}
         </ul>
         {{.Content}}
