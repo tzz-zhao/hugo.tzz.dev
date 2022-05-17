@@ -1,15 +1,20 @@
 {
+  "name": "tzz.dev",
+  "version": "1.0.0",
+  "description": "Tzz's Blog",
+  "main": "index.js",
   "scripts": {
     "dev": "hugo server -D",
-    "git": "git add . && git commit -m $npm_config_cmmt && git push origin main"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "name": "tzz.dev",
-  "packageManager": "yarn@3.2.0",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.2",
-    "autoprefixer": "^10.4.4",
-    "esbuild": "^0.14.38",
-    "postcss": "^8.4.12",
+    "autoprefixer": "^10.4.7",
+    "esbuild": "^0.14.39",
+    "postcss": "^8.4.13",
     "postcss-cli": "^9.1.0",
     "tailwindcss": "^3.0.24"
   }
