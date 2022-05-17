@@ -1,12 +1,9 @@
 {{ define "main" }}
     <div class="container mx-auto">
-        {{.Title}}
-        {{.Content}}
-
-        <ul>
-            {{ range .Pages }}
-                <li>
-                    <a href="{{.Permalink}}">{{.Title}} | {{.Date.Format "2006-01-02"}}</a>
+        <ul class="flex flex-col space-y-5 max-w-3xl mx-auto mt-5">
+            {{ range (.Paginate .RegularPagesRecursive).Pages }}
+                <li class="flex items-center shadow h-20 transition ease-in-out hover:scale-105 duration-300 cursor-pointer">
+                    <a class="w-full h-full pl-5 py-5" href="{{.Permalink}}">{{.Title}} | {{.Date.Format "2006-01-02"}}</a>
                 </li>
             {{ end }}
         </ul>
