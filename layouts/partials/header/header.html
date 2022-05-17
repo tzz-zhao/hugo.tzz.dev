@@ -1,4 +1,7 @@
 {{- partial "header/headerbar.html" . -}}
 <header>
     {{- partial "header/navbar.html" . -}}
+    {{ if eq .Kind "section" }}
+    {{- partial "header/section-header.html" . -}}
+    {{ end }}
 </header>
