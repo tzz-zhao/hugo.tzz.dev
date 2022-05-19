@@ -1,6 +1,11 @@
 {{ define "main" }}
     <article class="prose lg:prose-xl mx-auto mt-5">
         <h2 class="">{{.Title}}</h2>
+        <nav class="flex not-prose mb-2" aria-label="Breadcrumb">
+            <ol role="list" class="flex items-center space-x-4">
+                {{- partial "header/breadcrumb.html" . -}}
+            </ol>
+        </nav>
         この記事を読むのに必要な時間は約{{.ReadingTime}}分です。
         <ul class="flex list-none">
             {{ range (.GetTerms "tags") }}
