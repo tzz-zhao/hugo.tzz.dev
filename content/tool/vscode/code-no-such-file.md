@@ -12,6 +12,6 @@ VScode インストール済
 `python` を探してますが、`python3` になったので、見つからない
 
 ## 解決方法
-`/usr/local/bin/code` の中身を確認して、`python` を `python3` にすればいいけど、新しいバージョンで既に直したので、最新バージョンのVScode や　code をインストールすればOKです。
+`/usr/local/bin/code` の中身を確認して、`python` を `python3` にすればいいけど、新しいバージョンで既に直したので、最新バージョンの VScode や code をインストールすればOKです。
 
 以上、お楽しみ。
