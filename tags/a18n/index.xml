@@ -8,4 +8,4 @@ langフォルダに各言語のフォルダを配置して、言語文字列は�
 1 2 3 4 5 // デフォルト言語＝日本語 &amp;#39;locale&amp;#39; =&amp;gt; &amp;#39;ja&amp;#39;, // 予備言語＝英語 &amp;#39;fallback_locale&amp;#39; =&amp;gt; &amp;#39;en&amp;#39;, 自分で翻訳するのは面倒くさいので、Laravel Lang Publisherを使いましょう。
 composer require laravel-lang/publisher laravel-lang/lang --dev 日本語言語ファイルを追加します。
 1 php artisan lang:add ja これで日本語の言語フィアルが生成されます。
-1 2 3 4 5 6 7 /lang /ja auth.</description></item></channel></rss>
+1 2 3 4 5 6 7 /lang /ja auth.php pagination.php passwords.php validation.php ja.json</description></item></channel></rss>

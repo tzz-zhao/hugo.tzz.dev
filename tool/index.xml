@@ -20,7 +20,8 @@ yarn add -D tailwindcss @tailwindcss/typography postcss postcss-cli autoprefixer
 tailwindcss.config.js修正
 1 2 3 4 5 6 7 8 9 module.exports = { content: [&amp;#39;./layouts/**/*.html&amp;#39;, &amp;#39;./content/**/*.md&amp;#39;], theme: { extend: {}, }, plugins: [ require(&amp;#39;@tailwindcss/typography&amp;#39;), ], } cssファイル準備
 assets/css/main.cssを作成、内容を下記にします。
-1 2 3 @tailwind base; @tailwind components; @tailwind utilities; テンプレートのheadにcssを追加</description></item><item><title>Git情報を使う</title><link>https://tzz.dev/tool/hugo/enable-gitinfo/</link><pubDate>Thu, 21 Apr 2022 21:17:59 +0900</pubDate><guid>https://tzz.dev/tool/hugo/enable-gitinfo/</guid><description>作成者、作成時間などGit情報を使うには、設定が必要です。
+1 2 3 @tailwind base; @tailwind components; @tailwind utilities; テンプレートのheadにcssを追加
+1 2 3 4 5 6 7 8 9 10 11 {{ $css := resources.</description></item><item><title>Git情報を使う</title><link>https://tzz.dev/tool/hugo/enable-gitinfo/</link><pubDate>Thu, 21 Apr 2022 21:17:59 +0900</pubDate><guid>https://tzz.dev/tool/hugo/enable-gitinfo/</guid><description>作成者、作成時間などGit情報を使うには、設定が必要です。
 設定ファイル修正
 1 enableGitInfo = &amp;#34;true&amp;#34; テンプレートで使う
 1 2 3 {{with .GitInfo}} {{.AuthorName}}{{.AuthorDate}} {{end}}</description></item><item><title>Hugoのhtml langの設定方法</title><link>https://tzz.dev/tool/hugo/html-lang/</link><pubDate>Thu, 21 Apr 2022 01:23:46 +0900</pubDate><guid>https://tzz.dev/tool/hugo/html-lang/</guid><description>htmlのlangは未設定なので、lang=jaに設定します。
