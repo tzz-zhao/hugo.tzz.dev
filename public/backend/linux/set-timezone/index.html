@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="日々の開発メモ、たまにはプライベートのことも。" />
+<meta name="generator" content="Hugo 0.115.1"><link rel="apple-touch-icon" type="image/png" href="/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/icon-192x192.png">
+    <title>timedatectlでタイムゾーンを変更する方法 | Tzz.Dev</title>
+
+  
+
+<link href="/css/main.min.62c195dc913550b3d5f1989b48d8d9b94518b09c8cc7ce52c9d73bb4eee916c4.css" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9168205516410210" crossorigin="anonymous"></script></head><body class="flex flex-col min-h-screen"><div class="h-1 bg-gradient-to-r from-purple-900 via-cyan-500 to-pink-500"></div><header><div class="container mx-auto mt-2 flex flex-nowrap border-b">
+    <a class="font-bold italic text-2xl font-['Jost'] ml-5" href="/" aria-label="">
+        Tzz.Dev
+    </a>
+
+    
+    <div class="flex flex-auto"></div>
+
+    
+    <ul class="flex list-none mr-5">
+      <li class="flex items-center ml-4 hover:text-fuchsia-900">
+            <a class="align-baseline" href="https://github.com/tzz-zhao/tzz.dev" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+          </li>
+      <li class="flex items-center ml-4 hover:text-fuchsia-900">
+            <a class="align-baseline" href="https://twitter.com/tzzjp" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+          </li>
+      </ul>
+</div>
+</header><main class="flex-grow px-5">
+        <div id="content">
+    <article class="prose lg:prose-xl mx-auto mt-5">
+        <h2 class="">timedatectlでタイムゾーンを変更する方法</h2>
+        <nav class="flex not-prose mb-2" aria-label="Breadcrumb">
+            <ol role="list" class="flex items-center space-x-4">
+  <li>
+    <div>
+      <a href="/" class="text-gray-400 hover:text-gray-500">
+        
+        <svg class="flex-shrink-0 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+        </svg>
+        <span class="sr-only">Home</span>
+      </a>
+    </div>
+  </li>
+  
+
+  <li>
+    <div class="flex items-center">
+      
+      <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+      </svg>
+      <a href="https://tzz.dev/backend/" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">バックエンド</a>
+    </div>
+  </li>
+  
+</ol>
+        </nav>
+        この記事を読むのに必要な時間は約1分です。
+        <ul class="flex list-none">
+            
+                <li class="mr-2"><a href="https://tzz.dev/tags/timedatectl/"><span class="material-icons align-text-bottom">tag</span> timedatectl</a></li>
+            
+                <li class="mr-2"><a href="https://tzz.dev/tags/timezone/"><span class="material-icons align-text-bottom">tag</span> timezone</a></li>
+            
+                <li class="mr-2"><a href="https://tzz.dev/tags/%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BE%E3%83%BC%E3%83%B3/"><span class="material-icons align-text-bottom">tag</span> タイムゾーン</a></li>
+            
+        </ul>
+        <p>AWS EC2で新しいインスタンスを起動してから、デフォルトはUTCなので、タイムゾーンを変更する必要があります。<br>
+以前は <code>etc/sysconfig/clock</code> ファイルを編集する方法使いましたが、今回は <code>timedatectl</code> コマンドを使います。</p>
+<pre tabindex="0"><code>timedatectl set-timezone Asia/Tokyo
+</code></pre><p>これだけです。　お楽しみに！</p>
+
+    </article>
+
+        </div><div id="back-to-top" class="container sticky bottom-0 hidden">
+    <div class="flex flex-row-reverse">
+        <a href="#" class="text-4xl -rotate-45">🚀 </a>
+    </div>
+</div></main><footer class="border-t py-2"><div class="text-center">
+    &copy; 2022 tzz.dev
+</div>
+<script type="text/javascript" src="/js/main.js" defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YTV79RC16K"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-YTV79RC16K', { 'anonymize_ip': false });
+}
+</script>
+
+</footer></body>
+</html>

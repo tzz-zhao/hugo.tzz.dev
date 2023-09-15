@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pgsql on Tzz.Dev</title>
+    <link>https://tzz.dev/tags/pgsql/</link>
+    <description>Recent content in pgsql on Tzz.Dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2022 tzz.dev</copyright>
+    <lastBuildDate>Mon, 09 May 2022 01:05:11 +0900</lastBuildDate><atom:link href="https://tzz.dev/tags/pgsql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Laravelプロジェクト新規作成（with pgsql）</title>
+      <link>https://tzz.dev/backend/laravel/install-laravel-with-pgsql/</link>
+      <pubDate>Mon, 09 May 2022 01:05:11 +0900</pubDate>
+      
+      <guid>https://tzz.dev/backend/laravel/install-laravel-with-pgsql/</guid>
+      <description>Laravel Sail で新規プロジェクト作成する時、デフォルトで mysql 使いますが、PostgreSQL を使いたいので、with=pgsql で PostgreSQL を使うようにします。
+1 curl -s &amp;#34;https://laravel.build/test-app?with=pgsql&amp;#34; | bash [test-app]は新規作成プロジェクト名</description>
+    </item>
+    
+  </channel>
+</rss>

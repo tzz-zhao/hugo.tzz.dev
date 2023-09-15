@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vuepress on Tzz.Dev</title>
+    <link>https://tzz.dev/tags/vuepress/</link>
+    <description>Recent content in vuepress on Tzz.Dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2022 tzz.dev</copyright>
+    <lastBuildDate>Mon, 02 May 2022 02:26:01 +0900</lastBuildDate><atom:link href="https://tzz.dev/tags/vuepress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VuePressのGoogleアナリティクス設定方法</title>
+      <link>https://tzz.dev/tool/vuepress/set-google-analytics/</link>
+      <pubDate>Mon, 02 May 2022 02:26:01 +0900</pubDate>
+      
+      <guid>https://tzz.dev/tool/vuepress/set-google-analytics/</guid>
+      <description>VuePressの公式プラグインに@vuepress/plugin-google-analyticsがあります。
+このプラグインを使って、Google Analytics 4の設定ができます。
+設定方法は下記となります。
+インストール yarn add -D @vuepress/plugin-google-analytics@next 設定ファイル修正（/docs/.vuepress/config.ts） 1 2 3 4 5 6 7 8 9 import { googleAnalyticsPlugin } from &amp;#39;@vuepress/plugin-google-analytics&amp;#39; export default defineUserConfig({ plugins: [ googleAnalyticsPlugin({ id: &amp;#39;G-XXXXXXXXXX&amp;#39;, }), ], }) 以上。</description>
+    </item>
+    
+  </channel>
+</rss>

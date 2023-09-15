@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ツール on Tzz.Dev</title>
+    <link>https://tzz.dev/tool/</link>
+    <description>Recent content in ツール on Tzz.Dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2022 tzz.dev</copyright>
+    <lastBuildDate>Sat, 28 May 2022 15:06:36 +0900</lastBuildDate><atom:link href="https://tzz.dev/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac で code コマンドで./MacOS/Electron: No such file or directory エラーの解決方法</title>
+      <link>https://tzz.dev/tool/vscode/code-no-such-file/</link>
+      <pubDate>Sat, 28 May 2022 15:06:36 +0900</pubDate>
+      
+      <guid>https://tzz.dev/tool/vscode/code-no-such-file/</guid>
+      <description>環境 Mac OS VScode インストール済 code コマンドインストール済
+原因 python を探してますが、python3 になったので、見つからない
+解決方法 /usr/local/bin/code の中身を確認して、python を python3 にすればいいけど、新しいバージョンで既に直したので、最新バージョンの VScode や code をインストールすればOKです。
+以上、お楽しみ。</description>
+    </item>
+    
+    <item>
+      <title>Mac で Command Not Found Code 問題の解決方法</title>
+      <link>https://tzz.dev/tool/vscode/command-not-found-code/</link>
+      <pubDate>Sat, 28 May 2022 14:44:34 +0900</pubDate>
+      
+      <guid>https://tzz.dev/tool/vscode/command-not-found-code/</guid>
+      <description>環境 Mac OS
+やりたいこと code . コマンドで現在のフォルダをVScodeで開く
+code test コマンドで test フォルダをVScodeで開く
+問題 command not found: code エラーになる
+原因 code コマンドインストールしてない
+解決方法 VScode を起動 コマンドパレットを開く（F1） install code を入力 シェルコマンド：PATH 内に &#39;code&#39; コマンドをインストールします が表示されるはずなので、選択してインストールします。 以上で完了、無事 code コマンドが使えるようになるはず。
+ですが、、、万が一、./MacOS/Electron: No such file or directory のようなエラーになる場合は、これを参照
+以上、お楽しみ。</description>
+    </item>
+    
+    <item>
+      <title>VuePressのGoogleアナリティクス設定方法</title>
+      <link>https://tzz.dev/tool/vuepress/set-google-analytics/</link>
+      <pubDate>Mon, 02 May 2022 02:26:01 +0900</pubDate>
+      
+      <guid>https://tzz.dev/tool/vuepress/set-google-analytics/</guid>
+      <description>VuePressの公式プラグインに@vuepress/plugin-google-analyticsがあります。
+このプラグインを使って、Google Analytics 4の設定ができます。
+設定方法は下記となります。
+インストール yarn add -D @vuepress/plugin-google-analytics@next 設定ファイル修正（/docs/.vuepress/config.ts） 1 2 3 4 5 6 7 8 9 import { googleAnalyticsPlugin } from &amp;#39;@vuepress/plugin-google-analytics&amp;#39; export default defineUserConfig({ plugins: [ googleAnalyticsPlugin({ id: &amp;#39;G-XXXXXXXXXX&amp;#39;, }), ], }) 以上。</description>
+    </item>
+    
+    <item>
+      <title>Hugoでfontawesomeを使う</title>
+      <link>https://tzz.dev/tool/hugo/hugo-use-fontawesome/</link>
+      <pubDate>Mon, 25 Apr 2022 00:23:17 +0900</pubDate>
+      
+      <guid>https://tzz.dev/tool/hugo/hugo-use-fontawesome/</guid>
+      <description>Font AwesomeをHugoで使いたいので、その手順を記録します。
+@fortawesome/fontawesome-freeは簡単だけど、使ってないアイコンも入っているのでファイルのサイズが大きくなります。 なので、今回は@fortawesome/fontawesome-svg-coreを使います。
+FontAwesomeのパッケージをインストール yarn add -D @fortawesome/fontawesome-svg-core yarn add -D @fortawesome/free-regular-svg-icons yarn add -D @fortawesome/free-solid-svg-icons jsファイルをビルドするにはESBuildが必要なので、インストール yarn add -D esbuild jsファイル作成 assets/js/main.jsファイルを作成、内容は下記となります。 1 2 3 4 import {config,dom,library} from &amp;#39;@fortawesome/fontawesome-svg-core&amp;#39;; import {faDragon} from &amp;#39;@fortawesome/free-solid-svg-icons&amp;#39;; library.add(faDragon); dom.i2svg(); jsファイルを読み込み 1 2 {{ $built := resources.Get &amp;#34;js/main.js&amp;#34; | js.Build }} &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;{{ $built.RelPermalink }}&amp;#34; defer&amp;gt;&amp;lt;/script&amp;gt; アイコンを使います 1 &amp;lt;i class=&amp;#34;fa fa-dragon&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; 以上。</description>
+    </item>
+    
+    <item>
+      <title>Hugoにtailwindcssを導入してみました</title>
+      <link>https://tzz.dev/tool/hugo/setup-tailwindcss-to-hugo/</link>
+      <pubDate>Fri, 22 Apr 2022 00:43:15 +0900</pubDate>
+      
+      <guid>https://tzz.dev/tool/hugo/setup-tailwindcss-to-hugo/</guid>
+      <description>最近、人気のtailwindcssを勉強し始めたので、Hugoに導入する手順を記録します。
+必要なパッケージをインストール
+yarn add -D tailwindcss @tailwindcss/typography postcss postcss-cli autoprefixer tailwindcss初期化
+1 yarn run tailwindcss init -p tailwind.config.jsとpostcss.config.jsが生成されます
+tailwindcss.config.js修正
+1 2 3 4 5 6 7 8 9 module.exports = { content: [&amp;#39;./layouts/**/*.html&amp;#39;, &amp;#39;./content/**/*.md&amp;#39;], theme: { extend: {}, }, plugins: [ require(&amp;#39;@tailwindcss/typography&amp;#39;), ], } cssファイル準備
+assets/css/main.cssを作成、内容を下記にします。
+1 2 3 @tailwind base; @tailwind components; @tailwind utilities; テンプレートのheadにcssを追加
+1 2 3 4 5 6 7 8 9 10 11 {{ $css := resources.</description>
+    </item>
+    
+    <item>
+      <title>Git情報を使う</title>
+      <link>https://tzz.dev/tool/hugo/enable-gitinfo/</link>
+      <pubDate>Thu, 21 Apr 2022 21:17:59 +0900</pubDate>
+      
+      <guid>https://tzz.dev/tool/hugo/enable-gitinfo/</guid>
+      <description>作成者、作成時間などGit情報を使うには、設定が必要です。
+設定ファイル修正
+1 enableGitInfo = &amp;#34;true&amp;#34; テンプレートで使う
+1 2 3 {{with .GitInfo}} {{.AuthorName}}{{.AuthorDate}} {{end}} </description>
+    </item>
+    
+    <item>
+      <title>Hugoのhtml langの設定方法</title>
+      <link>https://tzz.dev/tool/hugo/html-lang/</link>
+      <pubDate>Thu, 21 Apr 2022 01:23:46 +0900</pubDate>
+      
+      <guid>https://tzz.dev/tool/hugo/html-lang/</guid>
+      <description>htmlのlangは未設定なので、lang=jaに設定します。
+言語設定
+config.tomlに下記の設定を修正
+1 2 languageCode = &amp;#39;ja-JP&amp;#39; defaultContentLanguage = &amp;#39;ja&amp;#39; layouts/_default/baseof.html修正
+1 lang=&amp;#34;{{.Site.Language.Lang}}&amp;#34; 以上。</description>
+    </item>
+    
+    <item>
+      <title>HugoのGoogleアナリティクス設定</title>
+      <link>https://tzz.dev/tool/hugo/hugo-add-googleanalytics/</link>
+      <pubDate>Thu, 21 Apr 2022 01:04:33 +0900</pubDate>
+      
+      <guid>https://tzz.dev/tool/hugo/hugo-add-googleanalytics/</guid>
+      <description>HugoはGoogleアナリティクスのV3とV4両方サポートしています、今回はV４を使います。
+測定IDの設定
+設定ファイル（config.toml）で測定IDを設定します
+1 googleAnalytics = &amp;#39;G-MEASUREMENT_ID&amp;#39; (*G-MEASUREMENT_IDは自分の測定IDに設定*) テンプレートの設定
+Hugoは下記２つのテンプレートを提供しています。
+_internal/google_analytics.html
+_internal/google_analytics_async.html
+V4の場合は　_internal/google_analytics.html を使いましょう
+layouts/partials/footer.html に下記追加
+1 {{ template &amp;#34;_internal/google_analytics.html&amp;#34; . }} 以上でGoogleアナリティクスの設定が完了しました、結果を確認しましょう。</description>
+    </item>
+    
+    <item>
+      <title>Hugoクイックスタート</title>
+      <link>https://tzz.dev/tool/hugo/hugo-start/</link>
+      <pubDate>Wed, 20 Apr 2022 23:52:27 +0900</pubDate>
+      
+      <guid>https://tzz.dev/tool/hugo/hugo-start/</guid>
+      <description>Hugoの最も簡単な使い方になります。
+インストール
+brew install hugo 新しいサイト作成
+hugo new site tzz.dev tzz.devはサイト名です。
+theme作成
+通常は既存のthemeを使いますが、勉強のため、自前でthemeを作成して使います
+cd tzz.dev hugo new theme tzz tzzはtheme名です。
+themes直下にtzzフォルダが作成され、tzz/layoutsには最低限のファイルが作成されるので tzz/layoutsフォルダをtzz.dev直下に移動して、theme/tzzフォルダを削除します
+single.html修正
+layouts/_default/single.htmlはまだ空白になっているので、最低限で修正します
+1 2 3 4 {{ define &amp;#34;main&amp;#34; }} {{.Title}} {{.Content}} {{ end }} コンテンツ作成
+hugo new test.md test.mdの内容はthis is a test.
+サーバーを起動
+hugo server -D ブラウザで http://localhost:1313/test/ を開いて、正常に表示されるはず。</description>
+    </item>
+    
+  </channel>
+</rss>
